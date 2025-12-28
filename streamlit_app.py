@@ -44,7 +44,7 @@ if ingredients_list :
          
           st.subheader(each_fruit+ ' Nutrition Information.')
           if search_on:
-            smoothiefruit_res = requests.get("https://my.smoothiefroot.com/api/fruit/"+each_fruit)
+            smoothiefruit_res = requests.get("https://my.smoothiefroot.com/api/fruit/"+search_on)
             sf_df = st.dataframe(data=smoothiefruit_res.json(),use_container_width=True)
           else :
             st.write(" !!!! not found ")        
