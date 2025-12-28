@@ -36,7 +36,9 @@ btn_to_insert = st.button('Insert')
 if ingredients_list : 
         ingredients_string=''
         for each_fruit in ingredients_list:
-            ingredients_string += each_fruit + ' '
+          ingredients_string += each_fruit + ' '
+          smoothiefruit_res = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+          sf_df = st.dataframe(data=smoothiefruit_res.json(),use_container_width=True)
 
         st.write("Ingredients txtx : ", ingredients_string)    
     
@@ -50,5 +52,4 @@ if ingredients_list :
       
    
 
-smoothiefruit_res = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-sf_df = st.dataframe(data=smoothiefruit_res.json(),use_container_width=True)
+
